@@ -50,8 +50,8 @@ aws-cloudformation-project/
 ├─ templates/
 │  ├─ 01-networking.yaml
 │  ├─ 02-storage.yaml
-│  └─ 03-ec2.yaml        # opcional
-└─ images/               # evidências (prints)
+│  └─ 03-ec2.yaml      
+└─ images/            
 ```
 
 ---
