@@ -13,6 +13,20 @@ Este lab cria uma **VPC pública**, um **bucket S3 privado** (com versionamento)
 
 ---
 
+## 📚 Tabela de Conteúdos
+- [Objetivos](#-objetivos)
+- [Arquitetura do Lab](#-arquitetura-do-lab)
+- [Estrutura do repositório](#%EF%B8%8F-estrutura-do-reposit%C3%B3rio)
+- [Templates](#-templates)
+- [Deploy (Console AWS em PT-BR)](#-deploy-console-aws-em-pt-br)
+- [Checklist de evidências (prints)](#-checklist-de-evid%C3%AAncias-prints)
+- [Troubleshooting](#-troubleshooting-r%C3%A1pido)
+- [Custos e limpeza](#-custos-e-limpeza)
+- [Licença](#-licen%C3%A7a)
+
+
+---
+
 ## 🎯 Objetivos
 - Praticar IaC em ambiente real na AWS.
 - Documentar o processo técnico de forma clara e reprodutível.
