@@ -81,7 +81,7 @@ Região sugerida: **sa-east-1 (São Paulo)**.
 3. **Avançar → Avançar → Criar pilha**  
 4. Validar no **S3**: Overview do bucket, **Propriedades** (Bloqueio Público + Criptografia AES-256) e **Versionamento ativado**.
 
-### Stack 03 — EC2 (Opcional)
+### Stack 03 — EC2
 1. Pegue na Stack 01 (aba **Saídas/Outputs**): `VpcId` e `PublicSubnetId`  
 2. **Criar pilha** → `templates/03-ec2.yaml` → **Avançar**  
 3. **Nome**: `dio-ec2-fiama`  
@@ -91,32 +91,63 @@ Região sugerida: **sa-east-1 (São Paulo)**.
 4. **Avançar → Avançar → Criar pilha**  
 5. Ao finalizar, na aba **Saídas (Outputs)**, clique em **`WebUrl`** para abrir a página “Hello DIO/Fiama”.
 
+### Limpeza Final
+1. **Esvaziar bucket** 
+2. **CloudFormation → Delete stack**.
+3. Status esperado: **DELETE_COMPLETE**.
+
 ---
 
-## 📸 Checklist de evidências (prints)
 
-### Stack 01 — Networking
-- [ ] `01-networking-04-eventos.png` → **Eventos** com `CREATE_COMPLETE`  
-- [ ] `01-networking-05-recursos.png` → **Recursos** listados  
-- [ ] `01-networking-06-vpc-subrede-rota.png` → VPC, Sub-rede e rota (console VPC)
+## 📸 Evidências (prints)
 
-### Stack 02 — S3
-- [ ] `02-s3-04-eventos.png` → **Eventos** com `CREATE_COMPLETE`  
-- [ ] `02-s3-05-recursos.png` → **Recursos** (bucket)  
-- [ ] `02-s3-06-bucket-overview.png` → Overview do bucket  
-- [ ] `02-s3-07-bucket-properties.png` → Propriedades (Bloqueio + Criptografia)  
-- [ ] `02-s3-08-bucket-versioning.png` → Versionamento **ativado**
+**Criação da pilha Stack 01 — Networkin**
+  
+![Carregar modelo](images/01-networking-01-carregar-modelo.png)
+![Nome da pilha e parâmetros](images/01-networking-02-nome-pilha.png)
 
-### Stack 03 — EC2 (opcional)
-- [ ] `03-ec2-04-eventos.png` → **Eventos** com `CREATE_COMPLETE`  
-- [ ] `03-ec2-05-recursos.png` → Instância + SG  
-- [ ] `03-ec2-06-ec2-console.png` → Instância “Em execução” com IPv4 público  
-- [ ] `03-ec2-07-weburl-hello.png` → Página “Hello DIO/Fiama” aberta
+**Confirmações**
+  
+![Eventos - CREATE_COMPLETE](images/01-networking-04-eventos.png)
+![Recursos criados](images/01-networking-05-recursos.png)
+![VPC + Sub-rede + Rota](images/01-networking-06-vpc-subrede-rota.png)
 
-### Cleanup (limpeza)
-- [ ] `05-cleanup-02-delete-eventos.png` → **Eventos** com `DELETE_COMPLETE` (de alguma pilha)
+---
 
-> Se perder o `DELETE_COMPLETE`, mude o filtro de status para **Excluídas** no CloudFormation ou reproduza com uma pilha “dummy”.
+**Criação da pilha Stack 02 – Storage**
+  
+![Carregar modelo](images/02-s3-01-carregar-modelo.png)
+![Nome da pilha e parâmetros](images/02-s3-02-nome-pilha.png)
+
+**Confirmações**
+  
+![Eventos - CREATE_COMPLETE](images/02-s3-04-eventos.png)
+![Recursos (bucket)](images/02-s3-05-recursos.png)
+
+**Bucket no S3**
+  
+![Propriedades (Bloqueio público + Criptografia)](images/02-s3-07-bucket-properties.png)
+![Versionamento ativado](images/02-s3-08-bucket-versioning.png)
+
+---
+
+**Criação da pilha Stack 03 — EC2**
+  
+![Carregar modelo](images/03-ec2-01-carregar-modelo.png)
+![Nome da pilha e parâmetros](images/03-ec2-02-nome-pilha.png)
+
+**Confirmações**
+  
+![Eventos - CREATE_COMPLETE](images/03-ec2-04-eventos.png)
+![Recursos (Instância + SG)](images/03-ec2-05-recursos.png)
+![Instância EC2 em execução (IPv4 público)](images/03-ec2-06-ec2-console.png)
+![Página Hello DIO/Fiama (WebUrl)](images/03-ec2-07-weburl-hello.png)
+
+---
+
+## 🧹 Limpeza Final
+
+![Eventos - DELETE_COMPLETE](images/05-cleanup-02-delete-eventos.png)
 
 ---
 
