@@ -1,15 +1,12 @@
 # AWS CloudFormation Project — DIO (Fiama)
 
-## 🎯 Header rápido
-
-```md
 ![AWS CloudFormation](https://img.shields.io/badge/AWS-CloudFormation-orange?logo=amazon-aws)
 ![IaC](https://img.shields.io/badge/IaC-CloudFormation-blue)
 ![YAML](https://img.shields.io/badge/Made%20with-YAML-2ea44f)
 ![Region](https://img.shields.io/badge/Region-sa--east--1-success)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/Status-Lab%20completo-brightgreen)
-```
+
 
 Infraestrutura como Código (**IaC**) na AWS usando **CloudFormation**.  
 Este lab cria uma **VPC pública**, um **bucket S3 privado** (com versionamento) e, opcionalmente, uma **EC2** com Apache para validação. Inclui passo a passo, parâmetros e checklist de evidências (prints).
